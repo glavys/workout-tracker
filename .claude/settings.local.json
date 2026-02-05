@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npx next build:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.telegram-mini-apps.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:medium.com)"
+    ]
+  }
+}
