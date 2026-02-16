@@ -30,8 +30,8 @@ export const workoutGroups: WorkoutGroup[] = [
     exercises: [
       { name: 'Жим ногами', sets: 4, reps: 10, weight: 100 },
       { name: 'Разгибание ног в тренажере', sets: 3, reps: 12, weight: 30 },
+      { name: 'Сгибание ног в тренажере', sets: 3, reps: 12, weight: 25 },
       { name: 'Сведение ног в тренажере', sets: 3, reps: 12, weight: 25 },
-      { name: 'Выпады с гантелями', sets: 3, reps: 10, weight: 12 },
       { name: 'Подъем на носки стоя', sets: 3, reps: 15, weight: 30 },
       { name: 'Скручивания на пресс', sets: 3, reps: 15 }
     ]
