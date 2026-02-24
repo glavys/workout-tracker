@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Exercise, Workout, SetData } from '../types';
 import { storage } from '../lib/storage';
-import { workoutGroups } from '../lib/workoutGroups';
+import { workoutGroups, exerciseGuides } from '../lib/workoutGroups';
 import DateSelector from './DateSelector';
 import SetInput from './SetInput';
 import ExercisePicker from './ExercisePicker';
@@ -248,7 +248,20 @@ export default function AddWorkout() {
           <div key={exercise.id} className="bg-white p-5 md:p-6 rounded-2xl shadow-sm">
             <div className="flex justify-between items-start mb-4">
               <div className="flex-1 mr-3">
-                <p className="font-bold text-gray-900">{index + 1}. {exercise.name}</p>
+                <p className="font-bold text-gray-900">
+                  {index + 1}. {exercise.name}
+                  {exerciseGuides[exercise.name] && (
+                    <a
+                      href={exerciseGuides[exercise.name]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-1.5 text-blue-400 hover:text-blue-600 text-xs font-normal align-middle"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      ?
+                    </a>
+                  )}
+                </p>
               </div>
               <button
                 onClick={() => removeExercise(exercise.id)}

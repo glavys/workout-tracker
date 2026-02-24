@@ -21,12 +21,21 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Database error' }, { status: 500 });
   }
 
+  // Маппинг переименованных упражнений (старое -> новое)
+  const renameMap: Record<string, string> = {
+    'Французский жим гантели из-за головы': 'Тяга косички на трицепс из-за головы',
+    'Французский жим гантели стоя': 'Тяга косички на трицепс из-за головы',
+  };
+
   // Конвертация из формата БД в формат фронтенда
   const workouts = (data || []).map(row => ({
     id: row.id,
     date: row.date,
     group: row.muscle_group,
-    exercises: row.exercises,
+    exercises: (row.exercises || []).map((ex: any) => ({
+      ...ex,
+      name: renameMap[ex.name] || ex.name,
+    })),
     duration: row.duration || undefined,
     notes: row.notes || undefined,
   }));

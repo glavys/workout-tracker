@@ -3,6 +3,22 @@ import { Workout, Settings } from '../types';
 const CACHE_KEY = 'workout-tracker';
 const SETTINGS_CACHE_KEY = 'workout-settings';
 
+// Маппинг переименованных упражнений (старое -> новое)
+const renameMap: Record<string, string> = {
+  'Французский жим гантели из-за головы': 'Тяга косички на трицепс из-за головы',
+  'Французский жим гантели стоя': 'Тяга косички на трицепс из-за головы',
+};
+
+function migrateExerciseNames(workouts: Workout[]): Workout[] {
+  return workouts.map(w => ({
+    ...w,
+    exercises: w.exercises.map(ex => ({
+      ...ex,
+      name: renameMap[ex.name] || ex.name,
+    })),
+  }));
+}
+
 let authToken: string | null = null;
 
 export function setAuthToken(token: string | null) {
@@ -27,7 +43,7 @@ function getCachedWorkouts(): Workout[] {
   if (typeof window === 'undefined') return [];
   try {
     const data = localStorage.getItem(CACHE_KEY);
-    return data ? JSON.parse(data) : [];
+    return data ? migrateExerciseNames(JSON.parse(data)) : [];
   } catch {
     return [];
   }

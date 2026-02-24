@@ -22,10 +22,18 @@ export interface Workout {
   notes?: string;
 }
 
+export interface ExerciseTemplate {
+  name: string;
+  sets: number;
+  reps: number;
+  weight?: number;
+  guideUrl?: string;
+}
+
 export interface WorkoutGroup {
   id: string;
   name: string;
-  exercises: Omit<Exercise, 'id' | 'setsData'>[];
+  exercises: ExerciseTemplate[];
 }
 
 export interface Settings {
