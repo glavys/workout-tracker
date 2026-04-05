@@ -8,7 +8,9 @@ import { exportToCSV } from '../lib/csv';
 const GROUP_NAMES: Record<string, string> = {
   chest: 'Грудь',
   back: 'Спина',
-  legs: 'Ноги'
+  legs: 'Ноги',
+  day_a: 'День A',
+  day_b: 'День B'
 };
 
 export default function Stats() {
@@ -51,7 +53,9 @@ export default function Stats() {
       byGroup: {
         chest: workouts.filter(w => w.group === 'chest').length,
         back: workouts.filter(w => w.group === 'back').length,
-        legs: workouts.filter(w => w.group === 'legs').length
+        legs: workouts.filter(w => w.group === 'legs').length,
+        day_a: workouts.filter(w => w.group === 'day_a').length,
+        day_b: workouts.filter(w => w.group === 'day_b').length
       }
     };
   }, [workouts]);
@@ -143,19 +147,33 @@ export default function Stats() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-8">
         <div className="bg-blue-50 p-4 md:p-5 rounded-2xl">
-          <p className="text-xl md:text-2xl font-bold text-blue-600">{stats.byGroup.chest}</p>
-          <p className="text-sm text-gray-500">Грудь</p>
+          <p className="text-xl md:text-2xl font-bold text-blue-600">{stats.byGroup.day_a}</p>
+          <p className="text-sm text-gray-500">День A</p>
         </div>
         <div className="bg-green-50 p-4 md:p-5 rounded-2xl">
-          <p className="text-xl md:text-2xl font-bold text-green-600">{stats.byGroup.back}</p>
-          <p className="text-sm text-gray-500">Спина</p>
+          <p className="text-xl md:text-2xl font-bold text-green-600">{stats.byGroup.day_b}</p>
+          <p className="text-sm text-gray-500">День B</p>
         </div>
-        <div className="bg-emerald-50 p-4 md:p-5 rounded-2xl">
-          <p className="text-xl md:text-2xl font-bold text-emerald-600">{stats.byGroup.legs}</p>
-          <p className="text-sm text-gray-500">Ноги</p>
-        </div>
+        {stats.byGroup.chest > 0 && (
+          <div className="bg-gray-50 p-4 md:p-5 rounded-2xl">
+            <p className="text-xl md:text-2xl font-bold text-gray-500">{stats.byGroup.chest}</p>
+            <p className="text-sm text-gray-400">Грудь (старое)</p>
+          </div>
+        )}
+        {stats.byGroup.back > 0 && (
+          <div className="bg-gray-50 p-4 md:p-5 rounded-2xl">
+            <p className="text-xl md:text-2xl font-bold text-gray-500">{stats.byGroup.back}</p>
+            <p className="text-sm text-gray-400">Спина (старое)</p>
+          </div>
+        )}
+        {stats.byGroup.legs > 0 && (
+          <div className="bg-gray-50 p-4 md:p-5 rounded-2xl">
+            <p className="text-xl md:text-2xl font-bold text-gray-500">{stats.byGroup.legs}</p>
+            <p className="text-sm text-gray-400">Ноги (старое)</p>
+          </div>
+        )}
       </div>
 
       <div className="mb-8">

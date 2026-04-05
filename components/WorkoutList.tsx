@@ -7,7 +7,9 @@ import { storage } from '../lib/storage';
 const GROUP_NAMES: Record<string, string> = {
   chest: 'Грудь',
   back: 'Спина',
-  legs: 'Ноги'
+  legs: 'Ноги',
+  day_a: 'День A',
+  day_b: 'День B'
 };
 
 export default function WorkoutList() {

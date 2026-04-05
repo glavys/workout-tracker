@@ -2,38 +2,32 @@ import { WorkoutGroup, ExerciseTemplate } from '../types';
 
 export const workoutGroups: WorkoutGroup[] = [
   {
-    id: 'chest',
-    name: 'Грудь',
-    exercises: [
-      { name: 'Жим штанги лежа', sets: 4, reps: 8, weight: 50, guideUrl: 'https://youtu.be/rT7DgCr-3pg' },
-      { name: 'Жим гантелей на наклонной скамье', sets: 3, reps: 10, weight: 20, guideUrl: 'https://youtu.be/8iPEnn-ltC8' },
-      { name: 'Разведение гантелей в наклоне', sets: 3, reps: 12, weight: 10, guideUrl: 'https://youtu.be/eozdVDA78K0' },
-      { name: 'Армейский жим гантелей сидя', sets: 3, reps: 10, weight: 12, guideUrl: 'https://youtu.be/qEwKCR5JCog' },
-      { name: 'Разведение гантелей в стороны', sets: 3, reps: 12, weight: 6, guideUrl: 'https://youtu.be/3VcKaXpzqRo' },
-      { name: 'Скручивания на пресс', sets: 3, reps: 15, guideUrl: 'https://youtu.be/Xyd_fa5zoEU' }
-    ]
-  },
-  {
-    id: 'back',
-    name: 'Спина',
-    exercises: [
-      { name: 'Тяга горизонтального блока к поясу', sets: 4, reps: 12, weight: 40, guideUrl: 'https://youtu.be/GZbfZ033f74' },
-      { name: 'Подтягивания', sets: 4, reps: 8, guideUrl: 'https://youtu.be/eGo4IYlbE5g' },
-      { name: 'Тяга гантели одной рукой в наклоне', sets: 3, reps: 10, weight: 16, guideUrl: 'https://youtu.be/pYcpY20QaE8' },
-      { name: 'Тяга верхнего блока к груди', sets: 3, reps: 12, weight: 30, guideUrl: 'https://youtu.be/CAwf7n6Luuc' },
-      { name: 'Скручивания на пресс', sets: 3, reps: 15, guideUrl: 'https://youtu.be/Xyd_fa5zoEU' }
-    ]
-  },
-  {
-    id: 'legs',
-    name: 'Ноги',
+    id: 'day_a',
+    name: 'День A — Фулбоди',
     exercises: [
       { name: 'Жим ногами', sets: 4, reps: 10, weight: 100, guideUrl: 'https://youtu.be/IZxyjW7MPJQ' },
-      { name: 'Разгибание ног в тренажере', sets: 3, reps: 12, weight: 30, guideUrl: 'https://youtu.be/YyvSfVjQeL0' },
-      { name: 'Сгибание ног в тренажере', sets: 3, reps: 12, weight: 25, guideUrl: 'https://youtu.be/1Tq3QdYUuHs' },
-      { name: 'Сведение ног в тренажере', sets: 3, reps: 12, weight: 25, guideUrl: 'https://youtu.be/2z2gJBGQyKE' },
-      { name: 'Подъем на носки стоя', sets: 3, reps: 15, weight: 30, guideUrl: 'https://youtu.be/gwLzBJYoWlI' },
-      { name: 'Скручивания на пресс', sets: 3, reps: 15, guideUrl: 'https://youtu.be/Xyd_fa5zoEU' }
+      { name: 'Сгибание ног в тренажере', sets: 3, reps: 12, weight: 40, guideUrl: 'https://youtu.be/1Tq3QdYUuHs' },
+      { name: 'Жим штанги лежа', sets: 4, reps: 8, weight: 50, guideUrl: 'https://youtu.be/rT7DgCr-3pg' },
+      { name: 'Армейский жим гантелей сидя', sets: 3, reps: 10, weight: 12, guideUrl: 'https://youtu.be/qEwKCR5JCog' },
+      { name: 'Подтягивания', sets: 3, reps: 10, guideUrl: 'https://youtu.be/eGo4IYlbE5g' },
+      { name: 'Тяга гантели одной рукой в наклоне', sets: 3, reps: 10, weight: 25, guideUrl: 'https://youtu.be/pYcpY20QaE8' },
+      { name: 'Подъем гантелей на бицепс сидя', sets: 3, reps: 10, weight: 10, guideUrl: 'https://youtu.be/sAq_ocpRh_I' },
+      { name: 'Подъем ног в висе', sets: 3, reps: 12 }
+    ]
+  },
+  {
+    id: 'day_b',
+    name: 'День B — Фулбоди',
+    exercises: [
+      { name: 'Жим ногами', sets: 3, reps: 12, weight: 90, guideUrl: 'https://youtu.be/IZxyjW7MPJQ' },
+      { name: 'Сгибание ног в тренажере', sets: 3, reps: 12, weight: 40, guideUrl: 'https://youtu.be/1Tq3QdYUuHs' },
+      { name: 'Жим гантелей на наклонной скамье', sets: 4, reps: 10, weight: 17, guideUrl: 'https://youtu.be/8iPEnn-ltC8' },
+      { name: 'Тяга горизонтального блока к поясу', sets: 3, reps: 12, weight: 45, guideUrl: 'https://youtu.be/GZbfZ033f74' },
+      { name: 'Тяга верхнего блока к груди', sets: 3, reps: 12, weight: 45, guideUrl: 'https://youtu.be/CAwf7n6Luuc' },
+      { name: 'Разведение гантелей в стороны', sets: 3, reps: 12, weight: 10, guideUrl: 'https://youtu.be/3VcKaXpzqRo' },
+      { name: 'Разведение гантелей в наклоне', sets: 3, reps: 12, weight: 10, guideUrl: 'https://youtu.be/eozdVDA78K0' },
+      { name: 'Тяга косички на трицепс стоя', sets: 3, reps: 10, weight: 12, guideUrl: 'https://youtu.be/2-LAMcpzODU' },
+      { name: 'Планка', sets: 3, reps: 45 }
     ]
   }
 ];
