@@ -9,8 +9,8 @@ const GROUP_NAMES: Record<string, string> = {
   chest: 'Грудь',
   back: 'Спина',
   legs: 'Ноги',
-  day_a: 'День A',
-  day_b: 'День B'
+  day_a: 'День 1',
+  day_b: 'День 2'
 };
 
 export default function Stats() {
@@ -150,11 +150,11 @@ export default function Stats() {
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-8">
         <div className="bg-blue-50 p-4 md:p-5 rounded-2xl">
           <p className="text-xl md:text-2xl font-bold text-blue-600">{stats.byGroup.day_a}</p>
-          <p className="text-sm text-gray-500">День A</p>
+          <p className="text-sm text-gray-500">День 1</p>
         </div>
         <div className="bg-green-50 p-4 md:p-5 rounded-2xl">
           <p className="text-xl md:text-2xl font-bold text-green-600">{stats.byGroup.day_b}</p>
-          <p className="text-sm text-gray-500">День B</p>
+          <p className="text-sm text-gray-500">День 2</p>
         </div>
         {stats.byGroup.chest > 0 && (
           <div className="bg-gray-50 p-4 md:p-5 rounded-2xl">

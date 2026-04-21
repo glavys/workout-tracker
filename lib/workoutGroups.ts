@@ -3,7 +3,7 @@ import { WorkoutGroup, ExerciseTemplate } from '../types';
 export const workoutGroups: WorkoutGroup[] = [
   {
     id: 'day_a',
-    name: 'День A — Фулбоди',
+    name: 'День 1',
     exercises: [
       { name: 'Жим ногами', sets: 4, reps: 10, weight: 100, guideUrl: 'https://youtu.be/IZxyjW7MPJQ' },
       { name: 'Сгибание ног в тренажере', sets: 3, reps: 12, weight: 40, guideUrl: 'https://youtu.be/1Tq3QdYUuHs' },
@@ -17,15 +17,14 @@ export const workoutGroups: WorkoutGroup[] = [
   },
   {
     id: 'day_b',
-    name: 'День B — Фулбоди',
+    name: 'День 2',
     exercises: [
-      { name: 'Жим ногами', sets: 3, reps: 12, weight: 90, guideUrl: 'https://youtu.be/IZxyjW7MPJQ' },
+      { name: 'Разгибание ног в тренажере', sets: 3, reps: 12, weight: 60, guideUrl: 'https://youtu.be/YyvSfVjQeL0' },
       { name: 'Сгибание ног в тренажере', sets: 3, reps: 12, weight: 40, guideUrl: 'https://youtu.be/1Tq3QdYUuHs' },
       { name: 'Жим гантелей на наклонной скамье', sets: 4, reps: 10, weight: 17, guideUrl: 'https://youtu.be/8iPEnn-ltC8' },
       { name: 'Тяга горизонтального блока к поясу', sets: 3, reps: 12, weight: 45, guideUrl: 'https://youtu.be/GZbfZ033f74' },
       { name: 'Тяга верхнего блока к груди', sets: 3, reps: 12, weight: 45, guideUrl: 'https://youtu.be/CAwf7n6Luuc' },
       { name: 'Разведение гантелей в стороны', sets: 3, reps: 12, weight: 10, guideUrl: 'https://youtu.be/3VcKaXpzqRo' },
-      { name: 'Разведение гантелей в наклоне', sets: 3, reps: 12, weight: 10, guideUrl: 'https://youtu.be/eozdVDA78K0' },
       { name: 'Тяга косички на трицепс стоя', sets: 3, reps: 10, weight: 12, guideUrl: 'https://youtu.be/2-LAMcpzODU' },
       { name: 'Планка', sets: 3, reps: 45 }
     ]

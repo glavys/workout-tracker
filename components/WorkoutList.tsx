@@ -8,8 +8,8 @@ const GROUP_NAMES: Record<string, string> = {
   chest: 'Грудь',
   back: 'Спина',
   legs: 'Ноги',
-  day_a: 'День A',
-  day_b: 'День B'
+  day_a: 'День 1',
+  day_b: 'День 2'
 };
 
 export default function WorkoutList() {
